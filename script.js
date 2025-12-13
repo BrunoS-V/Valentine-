@@ -42,11 +42,10 @@ playBtn.addEventListener("click", () => {
     playBtn.textContent = "⏸️";
     playBtn.classList.add("playing");
 
-    setTimeout(() => {
-      const surprise = document.getElementById("surprise");
-      surprise.classList.remove("hidden");
-      surprise.classList.add("show");
-    }, 5000);
+ setTimeout(() => {
+  const surprise = document.getElementById("surprise");
+  surprise.classList.add("show");
+}, 9000); 
   } else {
     music.pause();
     playBtn.textContent = "🎵";
@@ -89,3 +88,4 @@ playBtn.addEventListener("keydown", (e) => {
     playBtn.click();
   }
 });
+
