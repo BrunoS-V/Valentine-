@@ -1,0 +1,168 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* FUNDO AZUL CLARO ANIMADO */
+body {
+  height: 100vh;
+  background: linear-gradient(270deg, #cce7ff, #8ecae6, #219ebc);
+  background-size: 600% 600%;
+  animation: bgAnimation 14s ease infinite;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: 'Great Vibes', cursive;
+  overflow: hidden;
+  text-align: center;
+  color: #033f63;
+}
+
+@keyframes bgAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* CONTAINER GLASS */
+.container {
+  padding: 45px 55px;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 12px 45px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+
+  animation: fadeIn 2s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* TEXTO PRINCIPAL */
+h1 {
+  font-size: 3.6rem;
+  white-space: nowrap;
+  border-right: 3px solid #5fa8d3;
+  overflow: hidden;
+  margin-bottom: 12px;
+
+  text-shadow:
+    0 0 12px rgba(72, 202, 228, 0.7),
+    0 0 30px rgba(72, 202, 228, 0.5);
+}
+
+/* TEXTO */
+p {
+  font-size: 1.5rem;
+  color: #0353a4;
+  margin-top: 8px;
+}
+
+/* BOTÃO */
+#playBtn {
+  margin-top: 24px;
+  border: none;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  font-size: 1.7rem;
+
+  background: #48cae4;
+  color: #023047;
+
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+#playBtn:hover {
+  transform: scale(1.15);
+}
+
+/* BOTÃO TOCANDO */
+#playBtn.playing {
+  animation: pulse 1.2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+/* MENSAGEM FINAL */
+#surprise {
+  margin-top: 22px;
+  font-size: 1.7rem;
+  color: #ffafcc;
+  opacity: 0;
+  text-shadow: 0 0 12px rgba(31, 41, 194, 0.411);
+  transition: opacity 2s ease;
+}
+
+#surprise.show {
+  opacity: 1;
+}
+
+.hidden {
+  display: none;
+}
+
+/* CORAÇÕES / ESTRELAS */
+.heart {
+  position: absolute;
+  top: -10vh;
+  font-size: 1.3rem;
+  color: #90dbf4;
+  animation: fall linear forwards;
+  opacity: 0.85;
+  pointer-events: none;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh);
+    opacity: 0;
+  }
+}
+
+/* CLIQUE COM BRILHO */
+.spark {
+  position: absolute;
+  font-size: 20px;
+  animation: spark 1s ease forwards;
+  pointer-events: none;
+}
+
+@keyframes spark {
+  to {
+    transform: translateY(-30px) scale(1.6);
+    opacity: 0;
+  }
+}
+
+/* RESPONSIVO */
+@media (max-width: 600px) {
+  h1 { font-size: 2.4rem; }
+  p, #surprise { font-size: 1.15rem; }
+  .container { padding: 35px 30px; }
+  #playBtn {
+    width: 55px;
+    height: 55px;
+    font-size: 1.3rem;
+  }
+}
