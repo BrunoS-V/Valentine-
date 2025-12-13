@@ -116,7 +116,7 @@ p {
     opacity 7s ease,
     transform 7s ease;
 
-  text-shadow: 0 0 12px rgba(33, 158, 188, 0.6);
+  text-shadow: 0 0 12px solid #5fa8d3;
 }
 
 /* estado visível */
@@ -169,4 +169,5 @@ p {
     font-size: 1.3rem;
   }
 }
+
 
