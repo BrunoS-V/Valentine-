@@ -104,22 +104,25 @@ p {
   100% { transform: scale(1); }
 }
 
-/* MENSAGEM FINAL */
 #surprise {
   margin-top: 22px;
   font-size: 1.7rem;
-  color: #ffafcc;
+  color: #219ebc; /* azul */
+  
   opacity: 0;
-  text-shadow: 0 0 12px rgba(31, 41, 194, 0.411);
-  transition: opacity 2s ease;
+  transform: translateY(30px);
+
+  transition:
+    opacity 7s ease,
+    transform 7s ease;
+
+  text-shadow: 0 0 12px rgba(33, 158, 188, 0.6);
 }
 
+/* estado visível */
 #surprise.show {
   opacity: 1;
-}
-
-.hidden {
-  display: none;
+  transform: translateY(0);
 }
 
 /* CORAÇÕES / ESTRELAS */
@@ -166,3 +169,4 @@ p {
     font-size: 1.3rem;
   }
 }
+
