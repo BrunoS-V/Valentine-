@@ -217,3 +217,16 @@ body.mood-shift h1 {
   text-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
 }
 
+/* Animação que simula a batida grave */
+@keyframes pulseBeat {
+  0% { background: rgba(0, 0, 0, 0.5); }
+  100% { background: rgba(0, 0, 0, 0.75); } /* Escurece um pouco mais na "pancada" do grave */
+}
+
+/* A classe que o JavaScript vai ativar na hora certa */
+body.beat-pulse::before {
+  /* O tempo '0.8s' simula o ritmo lento (BPM) da música. 
+     Se achar muito rápido, mude para 1s ou 1.2s */
+  animation: pulseBeat 0.8s infinite alternate ease-in-out; 
+}
+
