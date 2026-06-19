@@ -196,10 +196,14 @@ body.mood-shift::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* 50% de preto para um escurecimento forte */
-  pointer-events: none; /* Permite clicar nos botões normalmente */
-  z-index: 1; /* Fica abaixo do .container */
+  background: rgba(0, 0, 0, 0); 
+  pointer-events: none;
+  z-index: 1;
   transition: background 8s ease;
+}
+
+body.mood-shift::before {
+  background: rgba(0, 0, 0, 0.5); /* Fica escuro suavemente */
 }
 
 /* Garante que o container fique acima da camada de sombra */
