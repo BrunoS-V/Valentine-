@@ -227,6 +227,6 @@ body.mood-shift h1 {
 body.beat-pulse::before {
   /* O tempo '0.8s' simula o ritmo lento (BPM) da música. 
      Se achar muito rápido, mude para 1s ou 1.2s */
-  animation: pulseBeat 0.8s infinite alternate ease-in-out; 
+  animation: pulseBeat 1.2s infinite alternate ease-in-out; 
 }
 
