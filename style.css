@@ -20,6 +20,25 @@ body {
   overflow: hidden;
   text-align: center;
   color: #033f63;
+  transition: background 8s ease, color 8s ease;
+}
+
+body.mood-shift {
+  /* Nova Paleta Romântica: Azul Marinho Profundo, Azul Petróleo, Roxo Crepúsculo, Lavanda Suave */
+  background: linear-gradient(270deg, #03045e, #023e8a, #5e548e, #9f86c0);
+  background-size: 600% 600%; /* Mantém o tamanho para a animação continuar rodando */
+
+  /* Mudar as cores dos textos para ficarem claros no fundo escuro */
+  color: #ffffff; /* H1 fica branco puro para máximo contraste */
+}
+
+body.mood-shift p {
+  color: #cce7ff; /* Um azul bem clarinho para o parágrafo normal */
+}
+
+body.mood-shift #surprise {
+  color: #90dbf4; /* Ciano claro, mantendo o brilho */
+  text-shadow: 0 0 15px rgba(144, 219, 244, 0.8); /* Aumenta o brilho para destacar */
 }
 
 @keyframes bgAnimation {
