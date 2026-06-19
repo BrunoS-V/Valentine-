@@ -39,6 +39,8 @@ playBtn.addEventListener("click", () => {
     music.play();
     fadeInMusic();
 
+    document.body.classList.add("mood-shift");
+
     playBtn.textContent = "⏸️";
     playBtn.classList.add("playing");
 
@@ -50,6 +52,7 @@ playBtn.addEventListener("click", () => {
     music.pause();
     playBtn.textContent = "🎵";
     playBtn.classList.remove("playing");
+    document.body.classList.remove("mood-shift");
   }
   isPlaying = !isPlaying;
 });
