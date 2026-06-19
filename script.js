@@ -56,6 +56,7 @@ playBtn.addEventListener("click", () => {
     playBtn.textContent = "🎵";
     playBtn.classList.remove("playing");
     document.body.classList.remove("mood-shift");
+    document.body.classList.remove("beat-pulse"); // Garante que o pulso pare no pause
   }
   isPlaying = !isPlaying;
 });
@@ -91,6 +92,17 @@ document.addEventListener("click", (e) => {
 playBtn.addEventListener("keydown", (e) => {
   if (e.key === "Enter" || e.key === " ") {
     playBtn.click();
+  }
+});
+
+const momentoDaBatida = 24.5; // O momento exato em que a batida entra
+
+music.addEventListener("timeupdate", () => {
+  // Ativa o pulso apenas se passar de 24.5s E a música estiver tocando
+  if (music.currentTime >= momentoDaBatida && isPlaying) {
+    document.body.classList.add("beat-pulse");
+  } else {
+    document.body.classList.remove("beat-pulse");
   }
 });
 
