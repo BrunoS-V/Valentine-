@@ -39,15 +39,18 @@ playBtn.addEventListener("click", () => {
     music.play();
     fadeInMusic();
 
-    document.body.classList.add("mood-shift");
+    // Atraso de 500ms (meio segundo) para a virada de cor ficar mais suave
+    setTimeout(() => {
+      document.body.classList.add("mood-shift");
+    }, 500);
 
     playBtn.textContent = "⏸️";
     playBtn.classList.add("playing");
 
- setTimeout(() => {
-  const surprise = document.getElementById("surprise");
-  surprise.classList.add("show");
-}, 9000); 
+    setTimeout(() => {
+      const surprise = document.getElementById("surprise");
+      surprise.classList.add("show");
+    }, 9000); 
   } else {
     music.pause();
     playBtn.textContent = "🎵";
@@ -56,7 +59,6 @@ playBtn.addEventListener("click", () => {
   }
   isPlaying = !isPlaying;
 });
-
 /* CORAÇÕES / ESTRELAS CAINDO */
 function createHeart() {
   const heart = document.createElement("div");
